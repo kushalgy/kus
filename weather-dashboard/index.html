@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Real-time weather dashboard using JavaScript Fetch API and Open-Meteo.">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="dashboard">
+      <header class="header">
+        <div>
+          <p class="eyebrow">LIVE WEATHER</p>
+          <h1>Weather Dashboard</h1>
+          <p class="subtitle">Search any city to view current weather conditions.</p>
+        </div>
+        <div class="status-dot" title="Live data"></div>
+      </header>
+
+      <form id="searchForm" class="search-box">
+        <input id="cityInput" type="text" placeholder="Enter city name..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="message" class="message hidden"></div>
+
+      <section id="weatherCard" class="weather-card hidden">
+        <div class="location">
+          <div>
+            <p class="label">CURRENT WEATHER</p>
+            <h2 id="locationName">--</h2>
+            <p id="updatedAt">--</p>
+          </div>
+          <div id="weatherIcon" class="weather-icon">☀️</div>
+        </div>
+
+        <div class="main-temp">
+          <span id="temperature">--</span><sup>°C</sup>
+          <p id="condition">--</p>
+        </div>
+
+        <div class="metrics">
+          <article class="metric">
+            <span class="metric-icon">💧</span>
+            <div><span class="metric-label">Humidity</span><strong id="humidity">--</strong></div>
+          </article>
+          <article class="metric">
+            <span class="metric-icon">💨</span>
+            <div><span class="metric-label">Wind Speed</span><strong id="windSpeed">--</strong></div>
+          </article>
+          <article class="metric">
+            <span class="metric-icon">🌡️</span>
+            <div><span class="metric-label">Feels Like</span><strong id="feelsLike">--</strong></div>
+          </article>
+          <article class="metric">
+            <span class="metric-icon">☁️</span>
+            <div><span class="metric-label">Cloud Cover</span><strong id="cloudCover">--</strong></div>
+          </article>
+        </div>
+
+        <div class="details">
+          <div><span>Coordinates</span><strong id="coordinates">--</strong></div>
+          <div><span>Timezone</span><strong id="timezone">--</strong></div>
+        </div>
+      </section>
+
+      <footer>
+        Data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+      </footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
